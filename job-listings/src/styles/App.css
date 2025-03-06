@@ -7,11 +7,15 @@
 
 body {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  overflow-x: hidden;
+  width: 100%;
 }
 
 .app {
   min-height: 100vh;
   background-color: #f0f2f5;
+  max-width: 100vw;
+  overflow-x: hidden;
 }
 
 .main {
@@ -39,6 +43,9 @@ body {
   -webkit-text-fill-color: transparent;
   position: relative;
   letter-spacing: -0.02em;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 
@@ -80,7 +87,7 @@ body {
   font-size: 1.25rem;
   font-weight: 600;
   color: #1a1a1a;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0;
 }
 
 .company-name {
@@ -220,6 +227,21 @@ body {
 
   .job-card {
     padding: 1rem;
+  }
+
+  .job-card-footer {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .job-tags {
+    margin-bottom: 1rem;
+  }
+
+  .view-details-button {
+    width: 100%;
+    justify-content: center;
+    padding: 0.75rem;
   }
 }
 
@@ -387,18 +409,28 @@ body {
   align-items: center;
   justify-content: space-between;
   gap: 1rem;
+  width: 100%;
 }
 
 .header-content {
   display: flex;
   align-items: center;
   flex: 1;
+  min-width: 0; /* Allow content to shrink */
 }
 
 .header-actions {
   display: flex;
   align-items: center;
   gap: 1rem;
+  flex-shrink: 0;
+}
+
+.favorites-toggle {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  white-space: nowrap;
 }
 
 .sidebar-toggle,
@@ -449,7 +481,6 @@ body {
   display: flex;
   align-items: center;
   gap: 0.75rem;
-  margin-right: 0.5rem;
 }
 
 .social-link {
@@ -511,6 +542,7 @@ body {
 @media (max-width: 768px) {
   .container {
     padding: 0 0.5rem;
+    max-width: 100%;
   }
 
   .filters {
@@ -542,19 +574,51 @@ body {
   }
 
   .header {
-    padding: 1rem;
+    padding: 0.75rem;
+    gap: 0.5rem;
   }
 
   .header-content {
-    gap: 1.5rem;
+    gap: 0.5rem;
   }
 
   .page-title {
-    font-size: 1.25rem;
+    font-size: 1.125rem;
+    max-width: 200px; /* Increased from 150px since we're removing favorites text */
   }
 
   .social-links {
-    gap: 0.5rem;
+    gap: 0.25rem;
+  }
+
+  .social-link {
+    padding: 0.25rem;
+  }
+
+  .social-icon {
+    width: 1.125rem;
+    height: 1.125rem;
+  }
+
+  .favorites-toggle {
+    padding: 0.25rem;
+  }
+
+  .favorites-toggle span {
+    display: none; /* Hide the "Favori İlanlar" text on mobile */
+  }
+
+  .menu-icon {
+    width: 1.25rem;
+    height: 1.25rem;
+  }
+
+  .header-actions {
+    gap: 0.25rem;
+  }
+
+  .sidebar-toggle {
+    padding: 0.25rem;
   }
 }
 

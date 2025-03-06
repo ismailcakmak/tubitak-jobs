@@ -29,7 +29,6 @@ function JobCard({ job, onViewDetails, onToggleFavorite, isFavorite }) {
       <div className="job-card-header">
         <div>
           <h2 className="job-title">{job.unvan}</h2>
-          <p className="company-name">{job.ilanBirimi}</p>
         </div>
         <div className="job-card-actions">
           <button 
