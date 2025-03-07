@@ -29,10 +29,10 @@ function JobListings({ showFavorites, favorites, onToggleFavorite }) {
         
         // Extract unique filter options
         const options = {
-          ilanBirimi: [...new Set(data.map(job => job.ilanBirimi))],
-          gorevYeri: [...new Set(data.map(job => job.gorevYeri))],
-          tecrubeYili: [...new Set(data.map(job => job.tecrubeYili))],
-          departments: [...new Set(data.flatMap(job => job.departments))],
+          ilanBirimi: [...new Set(data.map(job => job.ilanBirimi))].sort(Intl.Collator().compare),
+          gorevYeri: [...new Set(data.map(job => job.gorevYeri))].sort(Intl.Collator().compare),
+          tecrubeYili: [...new Set(data.map(job => job.tecrubeYili))].sort(Intl.Collator().compare),
+          departments: [...new Set(data.flatMap(job => job.departments))].sort(Intl.Collator().compare),
         };
         
         setFilterOptions(options);
