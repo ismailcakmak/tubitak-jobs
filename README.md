@@ -1,5 +1,7 @@
 # TÜBİTAK İş İlanları / TÜBİTAK Job Listings
 
+NOT : 2025 Eylül ayı itibariyle Tübitak kendi kariyer sayfasına bölüm bazlı arama özelliğini ve diğer filtreleri de çalışır hale getirdi :)
+
 [English](#english) | [Türkçe](#turkish)
 
 ## Turkish
